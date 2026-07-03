@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robocon 2026 - League Scoreboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-header">
+            <img src="logo.png" alt="Robocon 2026 Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
+            <h1 id="fallback-title" style="display: none;">Robocon 2026</h1>
+            <p>Hong Kong, China - ABU Asia-Pacific Robot Contest</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-target="matches-view">League Matches</button>
+            <button class="tab-btn" data-target="leaderboard-view">Leaderboard</button>
+        </nav>
+
+        <main>
+            <section id="matches-view" class="view active">
+                <div class="matches-grid" id="matches-container">
+                    <!-- Matches injected here via JS -->
+                </div>
+            </section>
+
+            <section id="leaderboard-view" class="view">
+                <div class="leaderboard-glass">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Code</th>
+                                <th>Team Name</th>
+                                <th>Matches</th>
+                                <th>Wins</th>
+                                <th>Total Score</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <!-- Leaderboard injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
