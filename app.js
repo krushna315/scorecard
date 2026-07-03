@@ -141,46 +141,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize leaderboard on load
     updateLeaderboard();
-
-    // Export Data functionality
-    document.getElementById('export-btn').addEventListener('click', () => {
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(savedScores));
-        const downloadAnchorNode = document.createElement('a');
-        downloadAnchorNode.setAttribute("href", dataStr);
-        downloadAnchorNode.setAttribute("download", "robocon_scores.json");
-        document.body.appendChild(downloadAnchorNode); // required for firefox
-        downloadAnchorNode.click();
-        downloadAnchorNode.remove();
-    });
-
-    // Import Data functionality
-    const importBtn = document.getElementById('import-btn');
-    const importFile = document.getElementById('import-file');
-    
-    importBtn.addEventListener('click', () => {
-        importFile.click();
-    });
-
-    importFile.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            try {
-                const parsedData = JSON.parse(event.target.result);
-                if (typeof parsedData === 'object' && parsedData !== null) {
-                    localStorage.setItem('roboconScores', JSON.stringify(parsedData));
-                    alert('Data imported successfully! The page will now reload.');
-                    window.location.reload();
-                } else {
-                    alert('Invalid file format.');
-                }
-            } catch (err) {
-                alert('Error reading the file. Make sure it is a valid JSON file.');
-            }
-        };
-        reader.readAsText(file);
-    });
 });
-
