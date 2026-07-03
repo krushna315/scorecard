@@ -81,12 +81,21 @@ header p {
     font-size: 1.1rem;
 }
 
+/* Controls Container */
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 /* Tabs */
 .tabs {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
 }
 
 .tab-btn {
@@ -111,6 +120,32 @@ header p {
     background: linear-gradient(135deg, rgba(0, 168, 232, 0.15), rgba(224, 0, 130, 0.15));
     border-color: var(--primary-neon);
     box-shadow: 0 4px 15px rgba(0, 168, 232, 0.2);
+}
+
+/* Action Buttons */
+.data-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: var(--card-hover);
+    border-color: var(--primary-neon);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 168, 232, 0.1);
 }
 
 /* Views */
