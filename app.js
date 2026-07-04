@@ -107,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const stats = calculateTeamStats();
 
-        // Sort by Wins (desc), then by Total Score (desc)
+        // Sort by Total Score (desc), then by Wins (desc)
         stats.sort((a, b) => {
-            if (b.wins !== a.wins) {
-                return b.wins - a.wins;
+            if (b.totalScore !== a.totalScore) {
+                return b.totalScore - a.totalScore;
             }
-            return b.totalScore - a.totalScore;
+            return b.wins - a.wins;
         });
 
         stats.forEach((team, index) => {
